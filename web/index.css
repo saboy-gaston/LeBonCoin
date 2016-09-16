@@ -1,0 +1,25 @@
+.annonce{
+    border : 1px solid black ;
+    width: 40% ;
+    margin-bottom: 20px;
+   
+}
+
+.annonce img{
+    width: 20% ;
+    height: 20% ;
+}
+
+#ajout{
+    float: right ;
+}
+
+#results{
+    
+    
+    
+}
+
+#suppresion{
+    float: right ;
+}

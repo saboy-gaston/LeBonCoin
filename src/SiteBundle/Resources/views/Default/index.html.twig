@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>leboncoin</title>
+    <link rel="stylesheet" href="../index.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src ="../tri.js"></script>
+
+</head>
+
+<body>
+  
+    <a href ="ajout"><input id = "ajout" type = "button" value = "Ajouter une annonce"/></a>
+    <div id="filtrage">
+        
+            <input type = "text" value="tu veu koi toi ?"/>
+
+            <select id = "oke" name="select">
+                {%for res in cate%} <option value="{{res}}">{{res}}</option> {%endfor%}
+            </select>
+            <input id = "ok" type = "button" value="ok"/>
+       
+    </div>
+    
+    
+    
+    
+
+        {% for result in test %}
+            <div id="results">
+            {%if result.Categorie.type == ""%}
+            <div class = "annonce">
+                <a href ="supprimer/{{result.Nom}}"><input id = "suppresion" type = "button" value = "Supprimer"/></a>
+                <img src = "../{{result.Image}}"> <br>
+                {{result.Nom}}<br>
+                Catégorie :   {{result.Categorie.type}}   <br>
+                Par {{result.Auteur}} le : {{result.Date|date("m/d/Y")}}<br>
+                Description : {{result.Description}}<br>
+                Prix : {{result.Prix}} {%  if result.Prix == 1%}euro {%else%}euros{% endif %}
+
+            </div>
+            {%endif%}
+
+
+
+        {% endfor %}
+
+
+
+
+
+    </div>
+
+</body>
+</html>
+
